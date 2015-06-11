@@ -42,6 +42,7 @@ namespace KundenManagementGUI
         {
             FormNeuerKunde fnk = new FormNeuerKunde();
             fnk.Show();
+            // List-Objekt hinzufügen fnk.NeuerKunde
 
 
         }
