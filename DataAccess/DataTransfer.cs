@@ -56,5 +56,12 @@ namespace DataAccess
 
         }
 
+
+        public bool SaveKunde(Kunde kunde)
+        {
+            Boolean result = true;
+
+
+        }
     }
 }
