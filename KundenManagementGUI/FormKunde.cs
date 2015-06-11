@@ -48,12 +48,16 @@ namespace KundenManagementGUI
             FormNeuerKunde fnk = new FormNeuerKunde();
             fnk.ShowDialog();  // modales Anzeigen
             // List-Objekt hinzufügen fnk.NeuerKunde
-            liKunde.Add(fnk.NeuerKunde);
-            if(dt.SaveKunde(fnk.NeuerKunde) == false)
+            
+            if (fnk.NeuerKunde != null)
             {
-
+                liKunde.Add(fnk.NeuerKunde);
+                if (dt.SaveKunde(fnk.NeuerKunde) == false)
+                {
+                    toolStripStatusLabel1.Text = "Fehler beim Speichern";
+                }
+                DatenBindung();
             }
-            DatenBindung();
 
         }
     }
