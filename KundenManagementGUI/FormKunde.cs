@@ -49,6 +49,10 @@ namespace KundenManagementGUI
             fnk.ShowDialog();  // modales Anzeigen
             // List-Objekt hinzufügen fnk.NeuerKunde
             liKunde.Add(fnk.NeuerKunde);
+            if(dt.SaveKunde(fnk.NeuerKunde) == false)
+            {
+
+            }
             DatenBindung();
 
         }
