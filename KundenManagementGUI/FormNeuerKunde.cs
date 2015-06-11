@@ -29,8 +29,11 @@ namespace KundenManagementGUI
         private void buttonOK_Click(object sender, EventArgs e)
         {
             // neues Kundenobjekt
-            // Daten aus TextBoxen
-            //
+            neuerKunde = new Kunde();
+            // aus Textboxen versorgen
+
+            this.Close();
+           
         }
     }
 }
