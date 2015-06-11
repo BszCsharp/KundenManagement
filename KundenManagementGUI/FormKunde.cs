@@ -29,11 +29,16 @@ namespace KundenManagementGUI
 
         private void DatenBindung()
         {
+            comboBoxKunden.DataSource = null;
             comboBoxKunden.DataSource = liKunde; // komplexe Datenbindung
             // einfache Datenbindung
+            this.textBoxKundenId.DataBindings.Clear();
             this.textBoxKundenId.DataBindings.Add("Text", liKunde, "KundenID");
+            this.textBoxKundenName.DataBindings.Clear();
             this.textBoxKundenName.DataBindings.Add("Text", liKunde, "Name");
+            this.textBoxKundenVorname.DataBindings.Clear();
             this.textBoxKundenVorname.DataBindings.Add("Text", liKunde, "VName");
+            this.textBoxKundenGebDatum.DataBindings.Clear();
             this.textBoxKundenGebDatum.DataBindings.Add("Text", liKunde, "GebDat");
 
         }
@@ -41,9 +46,10 @@ namespace KundenManagementGUI
         private void buttonNeuerKunde_Click(object sender, EventArgs e)
         {
             FormNeuerKunde fnk = new FormNeuerKunde();
-            fnk.Show();
+            fnk.ShowDialog();  // modales Anzeigen
             // List-Objekt hinzufügen fnk.NeuerKunde
-
+            liKunde.Add(fnk.NeuerKunde);
+            DatenBindung();
 
         }
     }
