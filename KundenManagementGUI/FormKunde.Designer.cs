@@ -39,6 +39,9 @@
             this.textBoxKundenGebDatum = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonNeuerKunde = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonKundenAnzeigen
@@ -133,11 +136,28 @@
             this.buttonNeuerKunde.UseVisualStyleBackColor = true;
             this.buttonNeuerKunde.Click += new System.EventHandler(this.buttonNeuerKunde_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 406);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(686, 22);
+            this.statusStrip1.TabIndex = 11;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(109, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // FormKunde
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 428);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.buttonNeuerKunde);
             this.Controls.Add(this.textBoxKundenGebDatum);
             this.Controls.Add(this.label4);
@@ -151,6 +171,8 @@
             this.Controls.Add(this.buttonKundenAnzeigen);
             this.Name = "FormKunde";
             this.Text = "Kundenverwaltung";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,6 +191,8 @@
         private System.Windows.Forms.TextBox textBoxKundenGebDatum;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonNeuerKunde;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 
