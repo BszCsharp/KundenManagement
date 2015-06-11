@@ -16,6 +16,7 @@ namespace DataAccess
             if (con == null) con = new OleDbConnection(Settings1.Default.ConString);
             try
             {
+                if(con.State != System.Data.ConnectionState.Open)
                 con.Open();
             }
             catch (OleDbException  e)
@@ -60,7 +61,27 @@ namespace DataAccess
         public bool SaveKunde(Kunde kunde)
         {
             Boolean result = true;
+            if(OpenConnection() == false)
+            {
+                result = false;
+            }
+            else
+            {
+                OleDbCommand inscmd = con.CreateCommand();
+                inscmd.Parameters.AddWithValue("ID", kunde.KundenID);
+                inscmd.Parameters.AddWithValue("Name", kunde.Name);
+                inscmd.Parameters.AddWithValue("VName", kunde.VName);
+                inscmd.Parameters.AddWithValue("GebDat", kunde.GebDat);
 
+                inscmd.CommandText= "Insert  Into Kunden Values(?,?,?,?)";
+                inscmd.ExecuteNonQuery();
+
+            }
+                
+
+
+
+            return result;
 
         }
     }
