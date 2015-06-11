@@ -35,7 +35,7 @@ namespace KundenManagementGUI
             neuerKunde.Name = textBoxKundenName.Text;
             neuerKunde.VName = textBoxKundenVorname.Text;
             neuerKunde.GebDat = textBoxKundenGebDatum.Text;
-            this.Hide();
+            this.Close();
            
         }   
     }
