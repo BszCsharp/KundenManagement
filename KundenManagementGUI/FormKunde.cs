@@ -58,6 +58,7 @@ namespace KundenManagementGUI
                 }
                 DatenBindung();
             }
+            fnk = null;
 
         }
     }
