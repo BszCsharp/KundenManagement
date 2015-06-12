@@ -20,7 +20,7 @@ namespace DataAccess
         //public String GebDat { get; set; }
         public override string ToString()
         {
-            return this.Name + " - " + this.GebDat;
+            return this.KundenID + ": " + this.Name + " - " + this.GebDat;
         }
 
     }
