@@ -31,16 +31,25 @@ namespace KundenManagementGUI
             // neues Kundenobjekt
             neuerKunde = new Kunde();
             // aus Textboxen versorgen
-            neuerKunde.KundenID = textBoxKundenId.Text;
-            neuerKunde.Name = textBoxKundenName.Text;
-            neuerKunde.VName = textBoxKundenVorname.Text;
-            neuerKunde.GebDat = textBoxKundenGebDatum.Text;
+            try
+            {
+                neuerKunde.KundenID = textBoxKundenId.Text;
+                neuerKunde.Name = textBoxKundenName.Text;
+                neuerKunde.VName = textBoxKundenVorname.Text;
+                neuerKunde.GebDat = textBoxKundenGebDatum.Text;
+            }
+            catch (Exception)
+            {
+
+                neuerKunde = null;
+            }
             this.Close();
            
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
+            neuerKunde = null;
             this.Close();
         }   
     }
