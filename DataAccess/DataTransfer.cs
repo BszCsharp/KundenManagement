@@ -38,13 +38,21 @@ namespace DataAccess
                 while(reader.Read())
                 {
                     int i = 0;
-                    Kunde k = new Kunde
+                    try
                     {
-                        KundenID = reader.GetString(i++),
-                        Name = reader.GetString(i++),
-                        VName = reader.GetString(i++),
-                        GebDat = reader.GetString(i++)
-                    };
+                        Kunde k = new Kunde
+                                  {
+                                       KundenID = reader.GetString(i++),
+                                       Name = reader.GetString(i++),
+                                       VName = reader.GetString(i++),
+                                       GebDat = reader.GetString(i++)
+                                   };
+                    }
+                    catch (Exception)
+                    {
+
+                        liku = null;
+                    }
                     lKu.Add(k);
                 }
                 return lKu;
