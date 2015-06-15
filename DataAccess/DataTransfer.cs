@@ -52,7 +52,7 @@ namespace DataAccess
             catch (Exception)
             {
 
-                return null; ;
+                return null;
             }
 
         }
