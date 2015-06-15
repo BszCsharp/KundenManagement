@@ -47,13 +47,14 @@ namespace DataAccess
                                        VName = reader.GetString(i++),
                                        GebDat = reader.GetString(i++)
                                    };
+                        lKu.Add(k);
                     }
                     catch (Exception)
                     {
 
-                        liku = null;
+                        lKu = null;
                     }
-                    lKu.Add(k);
+                    
                 }
                 return lKu;
             }
